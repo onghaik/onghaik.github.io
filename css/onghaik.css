@@ -1,0 +1,201 @@
+html {
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    tab-size: 4;
+    -moz-tab-size: 4;
+}
+
+:root {
+    --background-color: #eceff4;
+    --text-color: #4c566a;
+    --anchor-color: #5e81ac;
+    --anchor-hover: #378172;
+    --anchor-visited: #a78ea2;
+
+    /* Font variable declarations. */
+    --font-primary: 'Libertinus Serif',serif;
+    --font-serif: 'Libertinus Serif',serif;
+    --font-sans: "Libertinus Sans",sans-serif;
+    --font-monospace: "Inconsolata", monospace;
+    /* End of font variable declarations. */
+
+    font-size: calc(1rem + 0.25vw);
+    font-family: var(--font-primary);
+    line-height: 140%;
+    text-rendering: optimizeLegibility;
+    font-kerning: auto;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition-property: color, background-color, border-color;
+    transition-duration: 0.35s;
+    transition-timing-function: : ease-in-out;
+}
+
+a {
+    color: var(--anchor-color);
+}
+
+/* visited must go before :hover and :focus so that they have higher
+   priority */
+a:visited {
+    color: var(--anchor-visited);
+    cursor: pointer;
+}
+
+/* hover applies when cursor in on link */
+a:hover {
+    color: var(--anchor-hover);
+}
+
+a:focus {
+    color: var(--anchor-hover);
+}
+
+img {
+    max-width: 100%;
+}
+
+nav.site-navigation {
+    font-family: var(--font-sans);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav.site-navigation menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav-headers li {
+    display: inline;
+    padding: 0.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-brand a {
+    color: var(--text-color);
+    display: inline-block;
+}
+.nav-brand a:hover {
+    color: var(--anchor-hover);
+}
+.nav-brand a:focus {
+    color: var(--anchor-hover);
+}
+
+.page-title {
+    font-family: var(--font-sans);
+    font-size: 26px;
+    line-height: normal;
+}
+
+/*
+@media (min-width: 78.5rem) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 55vw;
+    }
+
+    .about-me {
+        overflow: auto;
+    }
+
+    .index-portrait {
+        float: left;
+        width: 45%;
+        object-fit: scale-down;
+    }
+
+    .index-portrait img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .index-bio {
+        float: right;
+        width: 45%;
+    }
+}
+*/
+
+@media (min-width: 78.5rem) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 55vw;
+    }
+
+    .about-me {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .index-portrait {
+        flex: initial;
+        width: 45%;
+    }
+
+    .index-portrait img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .index-bio {
+        flex: 1;
+        text-align: justify;
+    }
+}
+
+.pdf-embed-wrapper {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.pdf-embed-container {
+    width: 100%;
+    height: 100%;
+}
+
+.pdf-embed-link {
+    width: 100%;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.feed-icon {
+    width: 40px;
+}
+
+footer {
+    margin-top: 2rem;
+    border-top: 2px solid lightgray;
+    padding-top: 10px;
+    font-size: 80%;
+    text-align: center;
+}
+
+/* Reduce the margins for all elements INSIDE (child of) the footer element */
+footer > * {
+    margin: -0.25rem;
+}
