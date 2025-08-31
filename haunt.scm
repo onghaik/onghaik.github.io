@@ -23,7 +23,7 @@
 (site #:title
       "Kyle Onghai's Website"
       #:domain
-      "example.com"
+      "onghaik.github.io"
       #:default-metadata
       '((author . "Kyle Onghai")
         (email . "onghaik@gmail.com"))
