@@ -87,7 +87,7 @@
            `((h1 ,(string-append title " ")
                  (a (@ (href "/feed.xml"))
                     (img (@ (class "feed-icon")
-                            (src "assets/svg/feed.svg")))))
+                            (src "../assets/svg/feed.svg")))))
 
              ,(map (lambda (post)
                      (let ((uri (post-uri post)))
