@@ -36,7 +36,7 @@
             (atom-feeds-by-tag)
             index-page
             resume-page
-            (redirects '(("/resume.html" "/resume")))
+            (redirects '(("/resume.html" "/resume/index.html")))
             (static-directory "assets")
             (static-directory "css")
             (static-directory "fonts")))
