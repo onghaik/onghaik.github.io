@@ -9,28 +9,28 @@ jobs:
     name: Build my site
     runs-on: ubuntu-latest
     steps:
-        - name: Git checkout
-          uses: actions/checkout@v4
+    - name: Git checkout
+      uses: actions/checkout@v4
           
-        - name: Guix cache
-          uses: actions/cache@v3
-          with:
-                path: ~/.cache/guix
-                # use key that (almost) never matches
-                key: guix-cache-${{ github.sha }}
-                restore-keys: |
-                              guix-cache-
+    - name: Guix cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/guix
+        # use key that (almost) never matches
+        key: guix-cache-${{ github.sha }}
+        restore-keys: |
+          guix-cache-
                               
-        - name: Install Guix
-          uses: PromyLOPh/guix-install-action@v1.5
+    - name: Install Guix
+      uses: PromyLOPh/guix-install-action@v1.5
           
-        - name: Install Guile-Commonmark and Haunt
-          run: guix install guile guile-commonmark haunt
+    - name: Install Guile-Commonmark and Haunt
+      run: guix install guile guile-commonmark haunt
 
-        - name: Build
-        run: |
-             haunt build
-             
+    - name: Build
+      run: |
+        haunt build
+
     - name: Deploy to GH Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
