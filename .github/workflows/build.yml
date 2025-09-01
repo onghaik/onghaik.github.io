@@ -23,11 +23,11 @@ jobs:
        dnf --refresh -y install haunt guile-reader-devel guile-commonmark guile30-devel gcc diffutils awk autoconf automake make tar texinfo
     - name: build site
       run: haunt build
-    - name: Upload static files as artifact
-      id: deployment
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: docs/
+#    - name: Upload static files as artifact
+#      id: deployment
+#      uses: actions/upload-pages-artifact@v3
+#      with:
+#        path: docs/
 
   # Deployment job
   deploy:
