@@ -22,7 +22,7 @@ jobs:
           guix-cache-
                               
     - name: Install Guix
-      uses: PromyLOPh/guix-install-action@v1.5
+      uses: PromyLOPh/guix-install-action@v1.6
           
     - name: Install Guile-Commonmark and Haunt
       run: guix install guile guile-commonmark haunt
