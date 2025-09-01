@@ -1,0 +1,45 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: fedora
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:rawhide
+
+    steps:
+    - uses: actions/checkout@v4
+    - run: cat /etc/os-release
+    - name: install dependencies
+      run: |
+       dnf -y copr enable fed500/haunt
+       dnf -y update
+       dnf --refresh -y install haunt guile-reader-devel guile-commonmark guile30-devel gcc diffutils awk autoconf automake make tar texinfo
+    - name: build site
+      run: haunt build
+    - name: Upload static files as artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: docs/
+
+  # Deployment job
+  deploy:
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
