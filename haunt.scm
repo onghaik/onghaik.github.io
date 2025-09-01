@@ -31,7 +31,9 @@
       (list commonmark-reader sxml-reader)
       #:builders
       (list (blog #:theme onghaik-theme
-                  #:collections posts-collection)
+                  #:collections posts-collection
+                  #:post-prefix post-prefix
+                  #:posts-per-page 10)
             (atom-feed)
             (atom-feeds-by-tag)
             index-page
