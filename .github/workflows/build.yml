@@ -13,6 +13,10 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+
+    - name: Are we using Guix?
+      run: |
+        cat /etc/os-release
           
     # - name: Install Guix
     #   uses: PromyLOPh/guix-install-action@v1.6
