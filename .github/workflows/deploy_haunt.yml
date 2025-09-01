@@ -15,17 +15,17 @@ jobs:
     - name: Set up Guile
       run: |
         sudo apt-get update
-        sudo apt-get install -y guile-3.0 guile-3.0-dev git autoconf automake pkg-config
+        sudo apt-get install -y guile-3.0 guile-3.0-dev guile-commonmark git
 
-    - name: Install guile-commonmark
-      run: |
-        git clone https://github.com/OrangeShark/guile-commonmark.git
-        cd guile-commonmark
-        ./bootstrap
-        ./configure
-        make
-        sudo make install
-        cd ..
+#    - name: Install guile-commonmark
+#      run: |
+#        git clone https://github.com/OrangeShark/guile-commonmark.git
+#        cd guile-commonmark
+#        ./bootstrap
+#        ./configure
+#        make
+#        sudo make install
+#        cd ..
 
     - name: Install Haunt
       run: |
