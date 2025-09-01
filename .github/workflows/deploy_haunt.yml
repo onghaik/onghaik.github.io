@@ -15,13 +15,13 @@ jobs:
     - name: Set up Guile
       run: |
         sudo apt-get update
-        sudo apt-get install -y guile-3.0 git autoconf automake pkg-config
+        sudo apt-get install -y guile-3.0 guile-3.0-dev autoconf automake make GitHub
 
     - name: Install guile-commonmark
       run: |
         git clone https://github.com/OrangeShark/guile-commonmark.git
         cd guile-commonmark
-        ./bootstrap
+        autoreconf -vfi
         ./configure
         make
         sudo make install
