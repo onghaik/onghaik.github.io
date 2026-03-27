@@ -53,7 +53,7 @@
                    ,body
                    (footer (@ (class "text-center"))
                            (p (@ (class "copyright"))
-                              "© 2025 Kyle Onghai")
+                              "© 2026 Kyle Onghai")
                            (p (@ (class "contact-links"))
                               (a (@ (href "https://www.linkedin.com/in/onghaik/")
                                     (target "_blank")

@@ -1,0 +1,27 @@
+(use-modules (guix packages)
+             (guix licenses)
+             (guix git-download)
+             (guix build-system gnu)
+             (gnu packages)
+             (gnu packages autotools)
+             (gnu packages guile)
+             (gnu packages guile-xyz)
+             (gnu packages pkg-config)
+             (gnu packages texinfo))
+
+(package
+ (name "onghaik-site")
+ (version "git")
+ (source #f)
+ (build-system gnu-build-system)
+ (synopsis #f)
+ (description #f)
+ (license gpl3+)
+ (home-page "https://onghaik.github.io")
+ (inputs
+  `(("guile" ,guile-3.0)
+    ("haunt" ,haunt)
+    ("guile-reader" ,guile-reader)
+    ("guile-syntax-highlight" ,guile-syntax-highlight)
+    ("guile-commonmark" ,guile-commonmark))))
+
