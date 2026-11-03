@@ -23,18 +23,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Guile and Haunt
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y guile-3.0 haunt guile-commonmark guile-reader
+      - name: Install GNU Guix
+        uses: rekado/guix-install-action@v1
 
       - name: Build site with Haunt
-        run: haunt build
+        run: |
+          guix shell haunt guile guile-commonmark guile-reader -- haunt build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site # Change this if you set a custom #:build-directory in haunt.scm
+          path: ./site
 
   deploy:
     environment:
