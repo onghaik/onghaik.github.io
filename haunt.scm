@@ -13,7 +13,8 @@
  (theme)
 
  (pages index)
- (pages resume))
+ (pages cv)
+ (pages research))
 
 (define post-prefix "/posts")
 
@@ -37,8 +38,10 @@
             (atom-feed)
             (atom-feeds-by-tag)
             index-page
-            resume-page
-            (redirects '(("/resume.html" "/resume/")))
+            cv-page
+            (redirects '(("/cv.html" "/cv/")))
+            research-page
+            (redirects '(("/research.html" "/research/")))
             (static-directory "assets")
             (static-directory "css")
             (static-directory "fonts")))

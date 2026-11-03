@@ -13,7 +13,7 @@
                        (alt "A portrait of me."))))
           (div (@ (class "index-bio"))
                (h2 "Hi!")
-               (p "I am a second-year PhD student at "
+               (p "I am a third-year PhD student at "
                   ,(link "Princeton University" "https://www.princeton.edu")
                   " within the "
                   ,(link "Department of Operations Research and Financial Engineering" "https://orfe.princeton.edu") ". "

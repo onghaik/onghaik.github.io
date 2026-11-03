@@ -43,8 +43,10 @@
                         (menu (@ (class "nav-brand"))
                               (li ,(link "Kyle Onghai" "/")))
                         (menu (@ (class "nav-headers"))
-                              (li ,(link "Blog" "/posts/"))
-                              (li ,(link "CV" "/resume/"))))
+                              (li ,(link "Research" "/research/"))
+                              (li ,(link "CV" "/cv/"))
+                              (li ,(link "Blog" "/posts/"))))
+                   
                    ;; (header (@ (class "page-title"))
                    ;;         (h1 ,title))
                    ,(if (string=? title "Recent blog posts")

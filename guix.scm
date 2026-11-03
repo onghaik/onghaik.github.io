@@ -24,4 +24,3 @@
     ("guile-reader" ,guile-reader)
     ("guile-syntax-highlight" ,guile-syntax-highlight)
     ("guile-commonmark" ,guile-commonmark))))
-
