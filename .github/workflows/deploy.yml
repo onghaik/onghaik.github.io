@@ -23,11 +23,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install GNU Guix
-        uses: rekado/guix-install-action@v1
-
-      - name: Build site with Haunt
+      - name: Install GNU Guix from official upstream script
         run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gpg xz-utils uidmap
+          wget -q https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+          chmod +x guix-install.sh
+          yes "" | sudo ./guix-install.sh
+
+      - name: Build site with Guix and Haunt
+        run: |
+          export PATH="/var/guix/profiles/per-user/root/current-guix/bin:$PATH"
           guix shell haunt guile guile-commonmark guile-reader -- haunt build
 
       - name: Upload Pages artifact
